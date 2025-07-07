@@ -3,8 +3,9 @@ import uuid
 from datetime import datetime
 import os
 
-DATABASE_URL = "postgresql://neondb_owner:npg_uXQr3V7pbLOx@ep-shy-king-a82p1v83-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require"
 
+# ✅ Get connection string from environment
+DATABASE_URL = os.getenv("DATABASE_URL")
 # ✅ Establish connection using DATABASE_URL
 conn = psycopg2.connect(DATABASE_URL)
 
