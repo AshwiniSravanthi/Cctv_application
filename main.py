@@ -28,12 +28,6 @@ class Enquiry(BaseModel):
     phone_number: str
     message: str
 
-# (Optional) Serve home.html if still needed
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-@app.get("/", response_class=HTMLResponse)
-def serve_homepage():
-    return FileResponse("static/home.html")
 
 @app.on_event("startup")
 def startup_event():
